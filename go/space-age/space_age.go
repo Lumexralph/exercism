@@ -19,14 +19,14 @@ const timeOnEarth = 31557600.00 // in a year on earth
 
 // Age in seconds, calculate how old someone would be on different planets
 func Age(secs float64, name Planet) float64 {
-	planets := map[Planet]float64 {
-		"Earth": 1.0,
+	planets := map[Planet]float64{
+		"Earth":   1.0,
 		"Mercury": 0.2408467,
-		"Venus": 0.61519726,
-		"Mars": 1.8808158,
+		"Venus":   0.61519726,
+		"Mars":    1.8808158,
 		"Jupiter": 11.862615,
-		"Saturn": 29.447498,
-		"Uranus": 84.016846,
+		"Saturn":  29.447498,
+		"Uranus":  84.016846,
 		"Neptune": 164.79132,
 	}
 
@@ -35,4 +35,3 @@ func Age(secs float64, name Planet) float64 {
 
 	return years
 }
-
