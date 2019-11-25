@@ -6,6 +6,9 @@ import "testing"
 // and returns a string.
 // In other words, define a function with the following signature:
 // HelloWorld() string
+// func HelloWorld() string {
+// 	return "Hello, World!"
+// }
 
 func TestHelloWorld(t *testing.T) {
 	expected := "Hello, World!"
