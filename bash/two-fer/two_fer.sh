@@ -1,21 +1,27 @@
 #!/usr/bin/env bash
 
-set -f
+resistor_color_duo() {
+    # declare an hash map
+    declare -A colours
+    colours=(
+        ["black"]=0
+        ["brown"]=1
+        ["red"]=2
+        ["orange"]=3
+        ["yellow"]=4
+        ["green"]=5
+        ["blue"]=6
+        ["violet"]=7
+        ["grey"]=8
+        ["white"]=9
+        )
 
-# To preserve all contiguous whitespaces you have to set the IFS to something different:
-# $IFS (Internal Field Separator)
-# ref: https://logbuffer.wordpress.com/2010/09/23/bash-scripting-preserve-whitespaces-in-variables/
-IFS='%'
-
-two_fer() {
-  input="you"
-
-   # check the number of arguments supplied
-    if [[ ! (( "$#" = 0 )) ]]; then
-        input=$1;
+    # check for invalid colour
+    if [[ ! ${colours["$1"]} || ! ${colours["$2"]} ]]; then
+        echo "invalid color" && exit 1;
     fi
 
-    echo "One for "$input", one for me."
+    echo "${colours["$1"]}${colours["$2"]}"
 }
 
-two_fer "$@"
+resistor_color_duo "$@"
