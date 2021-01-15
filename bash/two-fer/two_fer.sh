@@ -20,7 +20,7 @@ resistor_color_duo() {
     if [[ ! ${colours["$1"]} || ! ${colours["$2"]} ]]; then
         echo "invalid color" && exit 1;
     fi
-
+    
     echo "${colours["$1"]}${colours["$2"]}"
 }
 
